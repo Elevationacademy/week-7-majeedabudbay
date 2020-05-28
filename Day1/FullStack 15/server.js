@@ -23,3 +23,42 @@ app.listen(port, function(){
 app.get('/sanity', function(req, res){
     res.send("Ok!")
 })
+
+
+
+
+
+
+
+const router = express.Router()
+// const City = require('')
+
+
+
+router.get('/words', function(req, res){
+
+    
+    word.find({}, function(err, words){
+        res.send(words)
+    })
+
+})
+
+
+
+
+
+
+
+router.post('/word', function(req, res){
+    const name = req.body.name
+    
+   
+    const word = new word({ name: name })
+    word.save()
+    res.send(word)
+})
+
+
+
+
